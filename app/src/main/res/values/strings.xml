@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Microphone</string>
+    <string name="description">Simple Microphone</string>
+    <string name="web">Web</string>
+    <string name="comment">Comment</string>
+    <string name="share">Share</string>
+    <string name="files">Files</string>
+    <string name="mic">Mic</string>
+    <string name="rec">Rec</string>
+</resources>

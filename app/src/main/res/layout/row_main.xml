@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gres"
+    app:cardCornerRadius="22dp"
+    app:cardElevation="22dp"
+    android:layout_margin="24dp">
+    <TextView
+        android:padding="7dp"
+        android:background="@color/gres"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:id="@+id/textStation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</androidx.cardview.widget.CardView>
