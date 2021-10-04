@@ -4,6 +4,7 @@ import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Build
 import androidx.core.app.NotificationCompat
@@ -13,6 +14,8 @@ import java.io.File
 
 class App: Application() {
     companion object{
+        var mp: MediaPlayer? = null
+        lateinit var mp3File: File
         var count = 1
         lateinit var sharedPreferences: SharedPreferences
         lateinit var editor: SharedPreferences.Editor

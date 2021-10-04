@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/ll_wrapper_main"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+        <ImageView
+            android:src="@drawable/microphone"
+            android:layout_marginBottom="40dp"
+            android:contentDescription="@string/app_name"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            />
+        <ImageView
+            android:id="@+id/shareFile"
+            android:src="@drawable/share"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:contentDescription="@string/app_name"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            />
+        <SeekBar
+            android:id="@+id/seekBarFile"
+            android:layout_marginBottom="20dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_deleteFile"
+                app:srcCompat="@drawable/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:focusable="true" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_stopFile"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:clickable="true"
+                android:focusable="true" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_playFile"
+                app:srcCompat="@drawable/play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:focusable="true" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
