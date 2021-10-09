@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
@@ -69,6 +70,7 @@ class FilesActivity : AppCompatActivity() {
 
         mainListView.adapter = FileListAdapter(this, nameList)
         mainListView.setOnItemClickListener { _, _, position, _ ->
+            // Toast.makeText(this, fileList[position].path + "  ---  " +  position.toString(), Toast.LENGTH_LONG).show()
             mp3File = fileList[position]
             startActivity(Intent(this, PlayFile::class.java))
         }

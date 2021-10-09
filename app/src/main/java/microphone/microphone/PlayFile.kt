@@ -15,18 +15,15 @@ import kotlinx.android.synthetic.main.player.*
 import microphone.microphone.utlis.App.Companion.mp
 import microphone.microphone.utlis.App.Companion.mp3File
 import java.io.File
-
 class PlayFile : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play_file)
 
-        fab_playFile.setOnClickListener{ plaing(mp3File.path) }
-        fab_stopFile.setOnClickListener {
-            if(mp != null && mp!!.isPlaying){ mp?.pause() }
-        }
+        title = mp3File.name
+        fab_playFile.setOnClickListener{ plaing ( ) }
+        fab_stopFile.setOnClickListener { if ( mp != null && mp!!.isPlaying ){ mp?.pause() } }
 
         shareFile.setOnClickListener {
             val sharingIntent = Intent(Intent.ACTION_SEND)
@@ -48,11 +45,14 @@ class PlayFile : AppCompatActivity() {
         fab_deleteFile.setOnClickListener{ if(mp != null){ mp?.stop(); } ; showMeDialogDeletedFile(mp3File.path); }
     }
 
-    private fun plaing(pathFile: String) {
+    private fun plaing() {
         if( mp != null && mp!!.isPlaying){ mp!!.pause(); return; }
         if(mp == null){
-            try { mp = MediaPlayer.create(this, Uri.parse(pathFile)) ; initialeSeekBar();  mp?.start()
+            try { mp = MediaPlayer.create(this, Uri.parse(mp3File.path)) ; initialeSeekBar();  mp?.start(); return;
             } catch (e: Exception){ Toast.makeText(this, "Error, comment from Alexei Suzdalenko email: alexei.saron@gmail.com", Toast.LENGTH_LONG).show() }
+        }
+        if(mp != null){
+            mp?.start(); initialeSeekBar()
         }
     }
 
@@ -79,5 +79,15 @@ class PlayFile : AppCompatActivity() {
         dialogDelete.setNegativeButton("No") { _, _ -> }
         val dialog2: AlertDialog? = dialogDelete.create()
         dialog2!!.show()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        plaing ( )
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if( mp != null){ mp!!.release(); mp = null }
     }
 }
